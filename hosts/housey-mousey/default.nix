@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, config,  ... }: {
   imports = [ ./hardware.nix ];
   
   networking.hostName = "housey-mousey";
@@ -6,6 +6,8 @@
   networking.firewall.allowedTCPPorts = [
     7000 # miniflux
     9123 # firefly-iii
+
+    80 443
   ];
 
   services.jellyfin = {
@@ -42,8 +44,11 @@
 
   services.firefly-iii = {
     enable = true;
+    settings = {
+      APP_KEY_FILE = "/firefly-key-file";
+      TRUSTED_PROXIES= "**";
+    };
     enableNginx = true;
-    settings.APP_KEY_FILE = "/firefly-key-file";
-    virtualHost = "0.0.0.0:9123";
+    virtualHost = "0.0.0.0";
   };
 }
