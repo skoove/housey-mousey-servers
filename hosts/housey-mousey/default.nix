@@ -29,5 +29,6 @@
     enable = true;
     enableNginx = true;
     settings.APP_KEY_FILE = "/firefly-key-file";
+    virtualHost = "0.0.0.0:9123";
   };
 }
