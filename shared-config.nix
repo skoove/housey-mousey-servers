@@ -37,6 +37,12 @@
         extraGroups = [ "networkmanager" "wheel" ];
         hashedPassword = "$6$2xBM53.UM3/ivkcX$tZOSel6jN1tamWbPqOe80UZ/8xJnIv6k7ysslqQseX.X3rbbYlZtAShiEhrHhNiVzutb9/nvYAcWj8lHAd03q1S";
       };
+
+      kobi = {
+        isNormalUser = true;
+        extraGroups = [ "networkmanager" "wheel" ];
+        hashedPassword = "$6$iWqc5nSn8eV7//PY$UukpD3VLSs41O7lBFtBlsUaD3iZjeYRvPyBvAshHqFH6bdKz1KOxS685l7/SM1tGwm54NZwMNGTM8p7xrcY/T.";
+      };
     };
   };
 
