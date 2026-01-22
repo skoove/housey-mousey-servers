@@ -14,16 +14,6 @@
     host = "0.0.0.0";
   };
 
-  services.miniflux = {
-    enable = true;
-    config = {
-      CREATE_ADMIN = 0;
-      FETCH_NEBULA_WATCH_TIME = 1;
-      FETCH_ODYSEE_WATCH_TIME = 1;
-      LISTEN_ADDR = "0.0.0.0:7000";
-    };
-  };
-
   services.transmission = {
     package = pkgs.transmission_4;
     enable = true;
