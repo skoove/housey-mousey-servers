@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   imports = [ ./hardware.nix ];
   
   networking.hostName = "housey-mousey";
@@ -22,5 +22,21 @@
       FETCH_ODYSEE_WATCH_TIME = 1;
       LISTEN_ADDR = "0.0.0.0:7000";
     };
+  };
+
+  services.transmission = {
+    package = pkgs.transmission_4;
+    enable = true;
+    openFirewall = true;
+    openRPCPort = true;
+    settings = {
+      rpc-bind-address = "0.0.0.0";
+      rpc-whitelist-enabled = false;
+    };
+  };
+
+  services.firefly-iii = {
+    enable = true;
+    enableNginx = true;
   };
 }
