@@ -8,7 +8,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
-  boot.loader.grub.devices = [ "/dev/disk/by-label/root" ];
+  boot.loader.grub.device = [ "/dev/disk/by-id/scsi-3600508b1001c8be2401fe60c1629957b" ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-label/root";
