@@ -3,6 +3,11 @@
   
   networking.hostName = "housey-mousey";
 
+  networking.firewall.allowedTCPPorts = [
+    7000 # miniflux
+    9123 # firefly-iii
+  ];
+
   services.jellyfin = {
     enable = true;
     openFirewall = true;
