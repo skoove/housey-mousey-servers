@@ -5,6 +5,7 @@
     fish     # shell
     git
     zellij   # terminal multiplexer
+    btop     # pretty top
   ];
 
   users = {
