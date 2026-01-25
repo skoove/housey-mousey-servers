@@ -55,6 +55,8 @@
   services.openssh.enable = true;
   services.tailscale.enable = true;
 
+  networking.networkmanager.enable = true;
+
   environment = {
     shellAliases = { sys = "${lib.getExe pkgs.systemd-manager-tui}"; };
 
