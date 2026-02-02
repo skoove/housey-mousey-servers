@@ -12,7 +12,7 @@
     80 443
   ];
 
-  networking.firewall.allowedTCPPorts = [
+  networking.firewall.allowedUDPPorts = [
     27015 # steam servers
   ];
 
