@@ -6,6 +6,7 @@
   networking.firewall.allowedTCPPorts = [
     7000 # miniflux
     9123 # firefly-iii
+    8384 # syncthing
 
     80 443
   ];
