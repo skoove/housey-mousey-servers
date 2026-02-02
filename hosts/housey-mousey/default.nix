@@ -7,8 +7,13 @@
     7000 # miniflux
     9123 # firefly-iii
     8384 # syncthing
+    27015 # steam servers
 
     80 443
+  ];
+
+  networking.firewall.allowedTCPPorts = [
+    27015 # steam servers
   ];
 
   services.jellyfin = {
@@ -57,5 +62,13 @@
     enable = true;
     guiAddress = "0.0.0.0:8384";
     openDefaultPorts = true;
+  };
+
+  users.users.steam = {
+    isNormalUser = true;
+    description = "steam";
+    packages = [
+      pkgs.steamcmd pkgs.steam-run
+    ];
   };
 }
