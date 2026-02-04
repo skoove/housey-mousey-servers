@@ -71,4 +71,9 @@
       pkgs.steamcmd pkgs.steam-run
     ];
   };
+
+  users.users.minecraft = {
+    isNormalUser = true;
+    description = "minecraft";
+  };
 }
