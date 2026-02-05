@@ -72,6 +72,7 @@
   users.users.steam = {
     isNormalUser = true;
     description = "steam";
+    hashedPassword = "$6$MrRpNZYZst7X/2mj$Gcq4RzrltyvNt19zdaHi1PETcnxChzauo.5NpPruiUTkxqcJ592MpyzUuMrpZ8xARjLlkEaerIx8d/rtOJ4K9.";
     packages = [
       pkgs.steamcmd pkgs.steam-run
     ];
@@ -80,5 +81,6 @@
   users.users.minecraft = {
     isNormalUser = true;
     description = "minecraft";
+    hashedPassword = "$6$BbvJY8EJrVm6Ng9c$QoQycQkW7hbkWLuoOVFaXN4PFTM0ffFU/XYgjoimLt0Bhqp8xCIAEOC1PtMqtOYpprTyvb2oYiaAhydGGaUEc.";
   };
 }
