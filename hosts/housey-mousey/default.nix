@@ -8,12 +8,17 @@
     9123 # firefly-iii
     8384 # syncthing
     27015 # steam servers
-
     80 443
   ];
 
   networking.firewall.allowedUDPPorts = [
-    27015 # steam servers
+    27015 3478 3479 3480# steam servers
+    7777 7778 # nuclear option
+  ];
+
+  networking.firewall.allowedUDPPortRanges = [
+    # steam servers
+    { from =27014; to =27030;}
   ];
 
   services.jellyfin = {
