@@ -36,7 +36,7 @@
       elaine = {
         isNormalUser = true;
         extraGroups = [ "networkmanager" "wheel" ];
-        hashedPassword = "$6$2xBM53.UM3/ivkcX$tZOSel6jN1tamWbPqOe80UZ/8xJnIv6k7ysslqQseX.X3rbbYlZtAShiEhrHhNiVzutb9/nvYAcWj8lHAd03q1S";
+        hashedPassword = "$6$2xBM53.UM3/ivkcX$tZOSel6jN1tamWbPqOe80UZ/8xJnIv6k7ysslqQseX.X3rbbYlZtAShiEhrHhNiVzutb9/nvYAcWj8lHAd03q1";
       };
 
       kobi = {
