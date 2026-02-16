@@ -12,7 +12,7 @@
     pkgs = nixpkgs.legacyPackages.${system};
   in {
     nixosConfigurations = {
-      housey-mousey = lib.nixosSystem {
+      apollo = lib.nixosSystem {
         inherit system;
         modules = [
           ./shared-config.nix
