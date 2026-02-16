@@ -16,7 +16,7 @@
         inherit system;
         modules = [
           ./shared-config.nix
-          ./hosts/housey-mousey
+          ./hosts/apollo
         ];
         specialArgs = { inherit inputs; };
       };
