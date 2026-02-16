@@ -1,7 +1,7 @@
 { pkgs, config,  ... }: {
   imports = [ ./hardware.nix ];
   
-  networking.hostName = "housey-mousey";
+  networking.hostName = "apollo";
 
   networking.firewall.allowedTCPPorts = [
     7000 # miniflux
