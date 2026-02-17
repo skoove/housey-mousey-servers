@@ -42,6 +42,12 @@
     };
   };
 
+  systemd.services.transmission.serviceConfig = {
+    ReadWritePaths = [
+      "~/../mnt/data/jellyfin"
+    ];
+  };
+
   services.transmission = {
     package = pkgs.transmission_4;
     enable = true;
