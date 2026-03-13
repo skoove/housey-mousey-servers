@@ -79,6 +79,7 @@
   services.calibre-server = {
     enable = true;
     openFirewall = true;
+    libraries = [ "/mnt/data/calibre" ];
   };
 
   users.users.steam = {
