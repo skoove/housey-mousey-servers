@@ -76,6 +76,11 @@
     openDefaultPorts = true;
   };
 
+  services.calibre-server = {
+    enable = true;
+    openFirewall = true;
+  };
+
   users.users.steam = {
     isNormalUser = true;
     description = "steam";
