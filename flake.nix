@@ -21,5 +21,9 @@
         specialArgs = { inherit inputs; };
       };
     };
+
+    devShells.${system}.default = pkgs.mkShell {
+      buildInputs = [ pkgs.nushell ];
+    };
   };
 }
