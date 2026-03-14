@@ -76,10 +76,10 @@
     openDefaultPorts = true;
   };
 
-  services.calibre-server = {
+  services.calibre-web = {
     enable = true;
     openFirewall = true;
-    libraries = [ "/mnt/data/calibre" ];
+    listen.ip = "0.0.0.0";
   };
 
   users.users.steam = {
