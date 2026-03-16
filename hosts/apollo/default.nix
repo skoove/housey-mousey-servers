@@ -65,6 +65,7 @@
     settings = {
       APP_KEY_FILE = "/firefly-key-file";
       TRUSTED_PROXIES= "**";
+      TZ = "Australia/Brisbane";
     };
     enableNginx = true;
     virtualHost = "0.0.0.0";
