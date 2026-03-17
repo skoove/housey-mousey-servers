@@ -44,8 +44,7 @@
 
   systemd.services.transmission.serviceConfig = {
     ReadWritePaths = [
-      "/mnt/data/jellyfin/shows"
-      "/mnt/data/jellyfin/movies"
+      "/mnt/data/jellyfin"
     ];
   };
 
