@@ -56,6 +56,9 @@
     settings = {
       rpc-bind-address = "0.0.0.0";
       rpc-whitelist-enabled = false;
+      download-dir = "/mnt/data/jellyfin";
+      incomplete-dir = "/var/lib/transmission/.incomplete";
+      incomplete-dir-enabled = true;
     };
   };
 
