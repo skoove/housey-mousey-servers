@@ -34,8 +34,12 @@
 
   services.miniflux = {
     enable = true;
+    adminCredentialsFile = pkgs.writeText "miniflux-admin-creds" ''
+      ADMIN_USERNAME=zie
+      ADMIN_PASSWORD=SuperSecurePassword
+    '';
     config = {
-      CREATE_ADMIN = 0;
+      CREATE_ADMIN = 1;
       FETCH_NEBULA_WATCH_TIME = 1;
       FETCH_ODYSEE_WATCH_TIME = 1;
       LISTEN_ADDR = "0.0.0.0:7000";
