@@ -18,7 +18,7 @@
 
         openssh.authorizedKeys.keys = [
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHmkNa62z50TJuvG8ny+pRGACrAi2pyiTJggJPTKYzAJ zie@zie-nixos-desktop"
-          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPnGnBgccjncw0VMcpn/qjauAugKrTSzkIjLKssgVG9z zie@nixos-laptop"
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPnGnBgccjncw0VMcpn/qjauAugKrTSzkIjLKssgVG9z zie@zie-nixos-laptop"
         ];
       };
     
@@ -28,8 +28,8 @@
         hashedPassword = "$6$OlvFrwWdhd1VlHoC$kinv7.fERmkcwrDTg6e9QFFlAiL8Twd3.ljmB3yNLqS1wpb93hNVWJY6jglJYFJG/z/teAAGlqtrWquJX3rM21";
 
         openssh.authorizedKeys.keys = [
-          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPnGnBgccjncw0VMcpn/qjauAugKrTSzkIjLKssgVG9z zie@nixos-laptop"
-          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINQVpPsMT/TM3XRDvhg662rUJ19PbB90FejdkYvtF8wj zie@nixos-desktop"
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPnGnBgccjncw0VMcpn/qjauAugKrTSzkIjLKssgVG9z zie@zie-nixos-laptop"
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHmkNa62z50TJuvG8ny+pRGACrAi2pyiTJggJPTKYzAJ zie@zie-nixos-desktop"
         ];
       };
 
