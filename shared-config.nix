@@ -1,11 +1,12 @@
 { pkgs, lib, ... }: {
   environment.systemPackages = with pkgs; [
-    nh       # better rebuilds
-    helix    # editor
-    fish     # shell
+    nh      # better rebuilds
+    helix   # editor
+    fish    # shell
     git
-    zellij   # terminal multiplexer
-    btop     # pretty top
+    zellij  # terminal multiplexer
+    btop    # pretty top
+    waypipe # remote wayland sessions
   ];
 
   users = {
