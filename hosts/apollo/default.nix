@@ -52,6 +52,9 @@
       # set all files to be data group and rw-rw-r--
       find /mnt/data -type f -exec chgrp data {} \;
       find /mnt/data -type f -exec chmod 664 {} \;
+
+      # set acls for /mnt/data/
+      ${pkgs.acl}/bin/setfacl -R -d -m g::rwX /mnt/data
     '';
   };
 
@@ -96,9 +99,7 @@
 
   # ensure transmission is able to access what it needs
   systemd.services.transmission.serviceConfig = {
-    ReadWritePaths = [
-      "/mnt/data/"
-    ];
+    BindPaths = "/mnt/data/";
   };
 
   services.firefly-iii = {
