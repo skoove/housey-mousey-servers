@@ -8,7 +8,7 @@
     9123 # firefly-iii
     8384 # syncthing
     27015 # steam servers
-    80 443
+    80 443 # web servers
   ];
 
   networking.firewall.allowedUDPPorts = [
@@ -20,6 +20,40 @@
     # steam servers
     { from =27014; to =27030;}
   ];
+
+  users.groups = {
+    # give all services ( and users ) that need it the data group for access to /mnt/data
+    data.members = [
+      "zie" "elaine" "kobi" # users (mmm kobi's services.,,,, mayb these are services...)
+
+      # services
+      "transmission"
+      "jellyfin"
+      "audiobookshelf"
+      "calibre"
+    ];
+  };
+
+  systemd.services.dataPermissions = {
+    description = "set /mnt/data/ ownsership and perms";
+    after = [ "users-groups.service" ];
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+    };
+
+    script = ''
+      # set all files and directorys to be data group and rwxrwxr-x
+      # also setgid bit on dirs 
+      find /mnt/data -type d -exec chgrp data {} \;
+      find /mnt/data -type d -exec chmod 2775 {} \;
+
+      # set all files to be data group and rw-rw-r--
+      find /mnt/data -type f -exec chgrp data {} \;
+      find /mnt/data -type f -exec chmod 664 {} \;
+    '';
+  };
 
   services.jellyfin = {
     enable = true;
@@ -46,12 +80,6 @@
     };
   };
 
-  systemd.services.transmission.serviceConfig = {
-    ReadWritePaths = [
-      "/mnt/data/jellyfin"
-    ];
-  };
-
   services.transmission = {
     package = pkgs.transmission_4;
     enable = true;
@@ -64,6 +92,13 @@
       incomplete-dir = "/var/lib/transmission/.incomplete";
       incomplete-dir-enabled = true;
     };
+  };
+
+  # ensure transmission is able to access what it needs
+  systemd.services.transmission.serviceConfig = {
+    ReadWritePaths = [
+      "/mnt/data/jellyfin"
+    ];
   };
 
   services.firefly-iii = {
@@ -87,15 +122,6 @@
     enable = true;
     openFirewall = true;
     listen.ip = "0.0.0.0";
-  };
-
-  users.users.steam = {
-    isNormalUser = true;
-    description = "steam";
-    hashedPassword = "$6$MrRpNZYZst7X/2mj$Gcq4RzrltyvNt19zdaHi1PETcnxChzauo.5NpPruiUTkxqcJ592MpyzUuMrpZ8xARjLlkEaerIx8d/rtOJ4K9.";
-    packages = [
-      pkgs.steamcmd pkgs.steam-run
-    ];
   };
 
   users.users.minecraft = {
