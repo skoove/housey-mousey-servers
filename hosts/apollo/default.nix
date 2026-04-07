@@ -97,7 +97,7 @@
   # ensure transmission is able to access what it needs
   systemd.services.transmission.serviceConfig = {
     ReadWritePaths = [
-      "/mnt/data/jellyfin"
+      "/mnt/data/"
     ];
   };
 
