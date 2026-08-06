@@ -123,6 +123,16 @@
     enable = true;
     openFirewall = true;
     listen.ip = "0.0.0.0";
+    options = {
+      # enable book conversion and upload in the gui
+      enableBookConversion = true;
+      enableBookUploading = true;
+    };
+  };
+
+  # bind data path
+  systemd.services.calibre-web.serviceConfig = {
+    BindPaths = "/mnt/data/";
   };
 
   users.users.minecraft = {
